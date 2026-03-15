@@ -27,3 +27,11 @@ Jawaban: pangkatBF() dan pangkatDC() sama-sama menghitung nilai pangkat, namun d
   - jika ganjil: pangkatDC(a, n/2) × pangkatDC(a, n/2) × a
 contohnya untuk 2^4: dipecah jadi pangkatDC(2, 2) × pangkatDC(2, 2) → pangkatDC(2, 1) × pangkatDC(2, 1) → base case return a = 2, sehingga 2×2=4, lalu 4×4=16.
 kesimpulannya, pangkatBF() lebih sederhana namun membutuhkan iterasi sebanyak n kali, sedangkan pangkatDC() lebih efisien karena memecah masalah menjadi setengahnya setiap rekursi sehingga prosesnya jauh lebih cepat untuk pangkat yang besar.
+2. Apakah tahap combine sudah termasuk dalam kode tersebut?Tunjukkan!
+Jawaban: iya, tahap combine sudah termasuk dalam kode tersebut. tahap combine pada divide and conquer adalah proses menggabungkan hasil dari sub-masalah yang sudah diselesaikan. pada method pangkatDC(), tahap combine terlihat di bagian else:
+if (n % 2 == 1) {
+    return (pangkatDC(a, n/2) * pangkatDC(a, n/2) * a);
+} else {
+    return (pangkatDC(a, n/2) * pangkatDC(a, n/2));
+}
+operasi perkalian ( * ) itulah yang menjadi tahap combine. hasil dari dua sub-masalah pangkatDC(a, n/2) digabungkan kembali dengan cara dikalikan satu sama lain. jika pangkatnya ganjil, ditambah satu perkalian ( * a ) lagi untuk mengkompensasi sisa pembagian.
