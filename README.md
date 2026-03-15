@@ -35,3 +35,6 @@ if (n % 2 == 1) {
     return (pangkatDC(a, n/2) * pangkatDC(a, n/2));
 }
 operasi perkalian ( * ) itulah yang menjadi tahap combine. hasil dari dua sub-masalah pangkatDC(a, n/2) digabungkan kembali dengan cara dikalikan satu sama lain. jika pangkatnya ganjil, ditambah satu perkalian ( * a ) lagi untuk mengkompensasi sisa pembagian.
+3. Pada method pangkatBF() terdapat parameter untuk melewatkan nilai yang akan dipangkatkan dan pangkat berapa, padahal di sisi lain di class Pangkat telah ada atribut nilai dan pangkat, apakah menurut Anda method tersebut tetap relevan untuk memiliki parameter? Apakah bisa jika method tersebut dibuat dengan tanpa parameter? Jika bisa, seperti apa method pangkatBF() yang tanpa parameter?
+Jawaban: method pangkatBF() sebenarnya kurang relevan untuk memiliki parameter, karena class Pangkat sudah memiliki atribut nilai dan pangkat yang bisa langsung diakses di dalam method tanpa perlu dilewatkan sebagai parameter. method pangkatBF() bisa dibuat tanpa parameter dengan langsung menggunakan atribut class. lalu di MainPangkat.java cara pemanggilannya jadi lebih simpel.
+keduanya menghasilkan output yang sama, namun versi tanpa parameter lebih efisien karena tidak perlu mengoper nilai yang sebetulnya sudah tersedia di dalam objek itu sendiri.
