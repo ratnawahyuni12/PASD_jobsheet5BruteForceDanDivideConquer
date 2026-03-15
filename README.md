@@ -17,3 +17,13 @@ Jawaban: faktorialBF() dan faktorialDC() sama-sama digunakan untuk menghitung ni
 - faktorialBF() bekerja secara iteratif menggunakan perulangan for yang berjalan dari i=1 hingga i=n, mengalikan nilai fakto secara bertahap hingga perulangan selesai. prosesnya linear dan searah dari bawah ke atas.
 - faktorialDC() bekerja secara rekursif dengan memecah masalah besar menjadi sub-masalah yang lebih kecil. fungsi terus memanggil dirinya sendiri dengan nilai n-1 hingga mencapai base case (n==1), lalu hasilnya dikombinasikan kembali saat fungsi "naik" ke pemanggilan sebelumnya.
 kesimpulannya, faktorialBF() lebih sederhana dan hemat memori karena tidak menggunakan call stack, sedangkan faktorialDC() lebih elegan secara penulisan kode namun menggunakan lebih banyak memori karena setiap pemanggilan rekursif disimpan di call stack hingga base case tercapai.
+
+Pertanyaan —— Percobaan 5.3
+1. Jelaskan mengenai perbedaan 2 method yang dibuat yaitu pangkatBF() dan pangkatDC()!
+Jawaban: pangkatBF() dan pangkatDC() sama-sama menghitung nilai pangkat, namun dengan cara yang berbeda. 
+- pangkatBF() bekerja secara iteratif menggunakan perulangan for yang berjalan sebanyak n kali, mengalikan hasil dengan a secara bertahap. contohnya untuk 2^4: 1×2, 2×2, 4×2, 8×2 = 16.
+- pangkatDC() bekerja secara rekursif dengan strategi divide and conquer, yaitu memecahkan masalah menjadi setengahnya setiap kali rekursi. caranya dengan mengecek apakah pangkat genap atau ganjil:
+  - jika genap: pangkatDC(a, n/2) × pangkatDC(a, n/2)
+  - jika ganjil: pangkatDC(a, n/2) × pangkatDC(a, n/2) × a
+contohnya untuk 2^4: dipecah jadi pangkatDC(2, 2) × pangkatDC(2, 2) → pangkatDC(2, 1) × pangkatDC(2, 1) → base case return a = 2, sehingga 2×2=4, lalu 4×4=16.
+kesimpulannya, pangkatBF() lebih sederhana namun membutuhkan iterasi sebanyak n kali, sedangkan pangkatDC() lebih efisien karena memecah masalah menjadi setengahnya setiap rekursi sehingga prosesnya jauh lebih cepat untuk pangkat yang besar.
