@@ -47,3 +47,10 @@ kesimpulannya, kedua method menghasilkan nilai yang sama, namun pangkatBF() lebi
 Pertanyaan —— Percobaan 5.4
 1. Kenapa dibutuhkan variable mid pada method TotalDC()?
 Jawaban: variabel mid dibutuhkan sebagai titik tengah untuk memecah array menjadi 2 bagian dalam proses divide. tanpa mid, maka tidak bisa menentukan batas pemisah antara bagian kiri dan kanan array, sehingga proses divide and conquer tidak bisa berjalan. mid inilah yang memastikan setiap rekursi memproses bagian array yang berbeda hingga mencapai base case (1 == r).
+2. Untuk apakah statement di bawah ini dilakukan dalam TotalDC()?
+double lsum = totalDC(arr, l, mid);
+double rsum = totalDC(arr, mid + 1, r);
+Jawaban: statement tersebut adalah tahap conquer dalam Divide and Conquer.
+- double lsum = totalDC(arr, l, mid); bertugas menghitung total penjumlahan bagian kiri array (dari indeks i sampai mid).
+- double rsum = totalDC(arr, mid + 1, r); bertugas menghitung total penjumlahan bagian kanan array (dari indeks mid+1 sampai r).
+keduanya bekerja dengan cara memanggil dirinya sendiri secara rekursif, terus memecah array menjadi bagian yang lebih kecil hingga mencapai base case (1 == r), yaitu saat array hanya tersisa 1 elemen dan langsung dikembalikan nilainya.
