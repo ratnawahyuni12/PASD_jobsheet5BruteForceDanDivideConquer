@@ -43,3 +43,7 @@ Jawaban: berikut penjelasannya
 - pangkatBF() bekerja secara iteratif menggunakan perulangan for yang berjalan sebanyak pangkat kali. setiap iterasi, nilai hasil dikalikan dengan nilai secara bertahap hingga perulangan selesai. prosesnya linear (semakin besar pangkatnya, semakin banyak iterasi yang dilakukan).
 - pangkatDC() bekerja secara rekursif dengan memecah masalah menjadi setengahnya setiap pemanggilan. setiap rekursi mengecek apakah pangkat genap atau ganjil, lalu menggabungkan hasilnya kembali dengan perkalian. prosesnya jauh lebih efisien karena jumlah rekursi hanya sebanyak log₂(n).
 kesimpulannya, kedua method menghasilkan nilai yang sama, namun pangkatBF() lebih sederhana dengan kompleksitas O(n). sedangkat pangkatDC() lebih efisien dengan kompleksitas O(log n), artinya untuk pangkat yang sangat besar, pangkatDC() jauh lebih cepat dibanding pangkatBF().
+
+Pertanyaan —— Percobaan 5.4
+1. Kenapa dibutuhkan variable mid pada method TotalDC()?
+Jawaban: variabel mid dibutuhkan sebagai titik tengah untuk memecah array menjadi 2 bagian dalam proses divide. tanpa mid, maka tidak bisa menentukan batas pemisah antara bagian kiri dan kanan array, sehingga proses divide and conquer tidak bisa berjalan. mid inilah yang memastikan setiap rekursi memproses bagian array yang berbeda hingga mencapai base case (1 == r).
