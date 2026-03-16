@@ -54,3 +54,6 @@ Jawaban: statement tersebut adalah tahap conquer dalam Divide and Conquer.
 - double lsum = totalDC(arr, l, mid); bertugas menghitung total penjumlahan bagian kiri array (dari indeks i sampai mid).
 - double rsum = totalDC(arr, mid + 1, r); bertugas menghitung total penjumlahan bagian kanan array (dari indeks mid+1 sampai r).
 keduanya bekerja dengan cara memanggil dirinya sendiri secara rekursif, terus memecah array menjadi bagian yang lebih kecil hingga mencapai base case (1 == r), yaitu saat array hanya tersisa 1 elemen dan langsung dikembalikan nilainya.
+3. Kenapa diperlukan penjumlahan hasil lsum dan rsum seperti di bawah ini?
+return lsum + rsum;
+Jawaban: return lsum + rsum; adalah tahap combine dalam Divide and Conquer. setelah array dipecah dan masing-masing bagian (kiri dan kanan) selesai dihitung secara rekursif, hasilnya perlu digabungkan kembali menjadi satu nilai total. tanpa lsum + rsum, hasil perhitungan dari bagian kiri dan kanan akan terpisah dan tidak menghasilkan total keseluruhan array. analoginya seperti menghitung total keuntungan perusahaan, kita bagi per semester (kanan dan kiri). hitung masing-masing, lalu jumlahkan kembali untuk mendapat total keuntungan setahun penuh.
