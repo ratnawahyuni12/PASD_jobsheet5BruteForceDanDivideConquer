@@ -63,3 +63,10 @@ if (l == r) {
     return arr[l];
 }
 kondisi l == r berarti array yang sedang diproses hanya tersisa 1 elemen, sehingga tidak perlu dipecah lagi dan langsung dikembalikan nilainya arr[l]. base case ini yang menghentikan rekursi agar tidak berjalan selamanya.
+5. Tarik Kesimpulan tentang cara kerja totalDC()
+Jawaban: totalDC() bekerja menggunakan pendekatan Divide and Conquer yang terdiri dari 3 tahap, yaitu
+  1) Divide : array dipecah menjadi 2 bagian menggunakan mid = (l + r) / 2
+  2) Conquer : setiap bagian dihitung totalnya secara rekursif dengan lsum dan rsum
+  3) Combine : hasil kedua bagian digabungkan kembali dengan return lsum + rsum
+proses ini terus berulang hingga mencapai base case (l == r) dimana array hanya tersisa 1 elemen dan langsung dikembalikan nilainya. 
+kesimpulannya, totalDC() tidak menjumlahkan array secara langsung satu per satu seperti totalBF(), melainkan memecah masalah besar menjadi sub-masalah yang lebih kecil secara terus menerus hingga paling sederhana, lalu menggabungkan hasilnya kembali ke atas hingga menghasilkan total keseluruhan array.
