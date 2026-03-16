@@ -57,3 +57,9 @@ keduanya bekerja dengan cara memanggil dirinya sendiri secara rekursif, terus me
 3. Kenapa diperlukan penjumlahan hasil lsum dan rsum seperti di bawah ini?
 return lsum + rsum;
 Jawaban: return lsum + rsum; adalah tahap combine dalam Divide and Conquer. setelah array dipecah dan masing-masing bagian (kiri dan kanan) selesai dihitung secara rekursif, hasilnya perlu digabungkan kembali menjadi satu nilai total. tanpa lsum + rsum, hasil perhitungan dari bagian kiri dan kanan akan terpisah dan tidak menghasilkan total keseluruhan array. analoginya seperti menghitung total keuntungan perusahaan, kita bagi per semester (kanan dan kiri). hitung masing-masing, lalu jumlahkan kembali untuk mendapat total keuntungan setahun penuh.
+4. Apakah base case dari totalDC()?
+Jawaban: base case dari totalDC() adalah
+if (l == r) {
+    return arr[l];
+}
+kondisi l == r berarti array yang sedang diproses hanya tersisa 1 elemen, sehingga tidak perlu dipecah lagi dan langsung dikembalikan nilainya arr[l]. base case ini yang menghentikan rekursi agar tidak berjalan selamanya.
